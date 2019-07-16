@@ -1,0 +1,38 @@
+body {
+  background-image: url('https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-weather-spectre-800x450.jpg?itok=F2qkTCJN');
+  /* background-color: skyblue; */
+  background-color: rgba(248, 247, 255, 0.8);
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+button {
+  padding: 5px;
+  font-size: 20px;
+}
+
+input {
+  padding: 5px;
+  font-size: 20px;
+}
+
+img {
+  margin: 0 auto;
+  width: 300px;
+  display: block;
+}
