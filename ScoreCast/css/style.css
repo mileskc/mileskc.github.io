@@ -1,6 +1,7 @@
 body {
-  background-image: url('https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-weather-spectre-800x450.jpg?itok=F2qkTCJN');
+  /* background-image: url('https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-weather-spectre-800x450.jpg?itok=F2qkTCJN'); */
   /* background-color: skyblue; */
+  background-image: url('http://videa.tv.s3.amazonaws.com/wp-content/uploads/2019/02/weatherforecastbackgroun_635273.jpg');
   background-color: rgba(248, 247, 255, 0.8);
   background-blend-mode: overlay;
   background-size: cover;

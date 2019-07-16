@@ -51,11 +51,37 @@ $(() => {
       $($main.before($clouds));
     } else if (data.weather[0].main === 'Thunderstorm') {
       let $storm = $(
-        '<img src="https://media4.s-nbcnews.com/i/newscms/2018_16/1333661/lightening-stock-today-180420-tease_4aeb5d5a1bdfb4d9b15ba54730fbb086.jpg" alt="Thunderstorm">'
+        '<https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80" alt="Thunderstorm">'
       );
       $($main.before($storm));
+    } else if (data.weather[0].main === 'Mist') {
+      let $mist = $(
+        '<img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80" alt="Misty Day">'
+      );
+      $($main.before($mist));
     }
   };
+
+  //   $('form').on('click', `.button`, event => {
+  //     event.preventDefault();
+  //     let $inputBox2 = $('#input-box2');
+  //     let $tag = $inputBox.val();
+  //     const endpoint = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+  //     $.ajax({ url: endpoint }).then(handleData);
+  //     $inputBox.val('');
+  //     $('h2').remove();
+  //     $('img').remove();
+  //     // console.log(endpoint);
+  //     // console.log('clicked');
+  //     // console.log($zipCode);
+  //   });
+
+  //   const handleData = data => {
+  //     console.log(data);
+  //     const $name = $('<h2>');
+  //     $name.text(data.name);
+  //     $('body').append($name);
+  //   };
 });
 
 //   let $inputBox = $('#input-box');
@@ -75,3 +101,5 @@ $(() => {
 // weather.main: Clear, Rain, Haze, Clouds, Thunderstorm
 
 // https://media4.s-nbcnews.com/i/newscms/2018_16/1333661/lightening-stock-today-180420-tease_4aeb5d5a1bdfb4d9b15ba54730fbb086.jpg
+
+// http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json
