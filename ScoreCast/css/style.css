@@ -25,6 +25,8 @@ form {
 button {
   padding: 5px;
   font-size: 20px;
+  background-color: rgb(116, 169, 230);
+  color: white;
 }
 
 input {

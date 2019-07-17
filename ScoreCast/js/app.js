@@ -1,7 +1,7 @@
 console.log('working?');
 
 $(() => {
-  $('form').on('click', `.button`, event => {
+  $('form').on('click', `#enterWeather`, event => {
     event.preventDefault();
     let $inputBox = $('#input-box');
     let $zipCode = $inputBox.val();
@@ -36,7 +36,7 @@ $(() => {
       $($main.before($clear));
     } else if (data.weather[0].main === 'Rain') {
       let $rain = $(
-        '<img src="src="https://www.theguardian.pe.ca/media/photologue/photos/cache/34450116_l_large.jpg" alt="Rainy Day"">'
+        '<img src="https://www.theguardian.pe.ca/media/photologue/photos/cache/34450116_l_large.jpg" alt="Rainy Day"">'
       );
       $($main.before($rain));
     } else if (data.weather[0].main === 'Haze') {
@@ -46,7 +46,7 @@ $(() => {
       $($main.before($haze));
     } else if (data.weather[0].main === 'Clouds') {
       let $clouds = $(
-        '<img src="https://www.stratoscale.com/wp-content/uploads/2019/05/bigstock-168398480.jpg" alt="Cloudy sky">'
+        '<img src= "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt = "Cloudy Sky">'
       );
       $($main.before($clouds));
     } else if (data.weather[0].main === 'Thunderstorm') {
@@ -62,26 +62,29 @@ $(() => {
     }
   };
 
-  //   $('form').on('click', `.button`, event => {
-  //     event.preventDefault();
-  //     let $inputBox2 = $('#input-box2');
-  //     let $tag = $inputBox.val();
-  //     const endpoint = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
-  //     $.ajax({ url: endpoint }).then(handleData);
-  //     $inputBox.val('');
-  //     $('h2').remove();
-  //     $('img').remove();
-  //     // console.log(endpoint);
-  //     // console.log('clicked');
-  //     // console.log($zipCode);
-  //   });
+  $('form').on('click', `#enterMusic`, event => {
+    event.preventDefault();
+    let $inputBox2 = $('#input-box2');
+    let $tag = $inputBox2.val();
+    const endpoint = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+    $.ajax({ url: endpoint }).then(handleData2);
+    $inputBox2.val('');
+    $('h2').remove();
+    console.log(endpoint);
+    console.log('clicked');
+    // console.log($tag);
+  });
 
-  //   const handleData = data => {
-  //     console.log(data);
-  //     const $name = $('<h2>');
-  //     $name.text(data.name);
-  //     $('body').append($name);
-  //   };
+  const handleData2 = data => {
+    console.log(data);
+    const $name = $('<h2>');
+    $name.text(data.tracks.track[0].name);
+    $('body').append($name);
+
+    const $trackLink = $('<h2>');
+    $trackLink.text(data.tracks.track[0].url);
+    $('body').append($trackLink);
+  };
 });
 
 //   let $inputBox = $('#input-box');
