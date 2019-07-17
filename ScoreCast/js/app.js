@@ -7,6 +7,7 @@ $(() => {
     let $zipCode = $inputBox.val();
     const endpoint = `http://api.openweathermap.org/data/2.5/weather?zip=${$zipCode},us&units=imperial&appid=54358d797d854fe643545e22f50f01c5`;
     $.ajax({ url: endpoint }).then(handleData);
+
     $inputBox.val('');
     $('h2').remove();
     $('img').remove();
@@ -17,9 +18,9 @@ $(() => {
 
   const handleData = data => {
     console.log(data);
-    const $name = $('<h2>');
-    $name.text(data.name);
-    $('body').append($name);
+    const $townName = $('<h2>');
+    $townName.text(data.name);
+    $('body').append($townName);
 
     const $main = $('<h2>');
     $main.text(data.weather[0].main);
@@ -60,30 +61,88 @@ $(() => {
       );
       $($main.before($mist));
     }
+
+    const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
+      data.weather[0].main
+    }&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+    $.ajax({ url: endpoint2 }).then(handleData2);
+
+    $('h3').remove();
+    $('h4').remove();
+    $('a').remove();
   };
 
-  $('form').on('click', `#enterMusic`, event => {
-    event.preventDefault();
-    let $inputBox2 = $('#input-box2');
-    let $tag = $inputBox2.val();
-    const endpoint = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
-    $.ajax({ url: endpoint }).then(handleData2);
-    $inputBox2.val('');
-    $('h2').remove();
-    console.log(endpoint);
-    console.log('clicked');
-    // console.log($tag);
-  });
+  //   $('form').on('click', `#enterMusic`, event => {
+  //     event.preventDefault();
+  //     let $inputBox2 = $('#input-box2');
+  //     let $tag = $inputBox2.val();
+  //     // const endpoint = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+  //     const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+  //     $.ajax({ url: endpoint2 }).then(handleData2);
+  //     $inputBox2.val('');
+  //     $('h3').remove(); ///make it so it doesn't remove weather h2
+  //     console.log(endpoint);
+  //     console.log('clicked');
+  //     // console.log($tag);
+  //   });
 
   const handleData2 = data => {
     console.log(data);
-    const $name = $('<h2>');
-    $name.text(data.tracks.track[0].name);
-    $('body').append($name);
+    // const $name = $('<h3>');
+    // $name.text(data.tracks.track[0].name);
+    // $('body').append($name);
 
-    const $trackLink = $('<h2>');
-    $trackLink.text(data.tracks.track[0].url);
+    // const $trackLink = $('<h3>');
+    // $trackLink.text(data.tracks.track[0].url);
+    // $('body').append($trackLink);
+
+    const $songToday = $('<h4>');
+    $songToday.text("Today's Tune:");
+    $('body').append($songToday);
+
+    // const $songName = $('<h3>');
+    // $songName.text(data.results.trackmatches.track[0].name);
+    // $('body').append($songName);
+
+    const $songName = $('<h3>');
+    $songName.text(
+      data.results.trackmatches.track[
+        Math.floor(Math.random() * data.results.trackmatches.track.length)
+      ].name
+    );
+    $('body').append($songName);
+
+    // const $artist = $('<h3>');
+    // $artist.text('by ' + data.results.trackmatches.track[0].artist);
+    // $('body').append($artist);
+
+    const $artist = $('<h3>');
+    $artist.text(
+      'by ' +
+        data.results.trackmatches.track[
+          Math.floor(Math.random() * data.results.trackmatches.track.length)
+        ].artist
+    );
+    $('body').append($artist);
+
+    // const $trackLink = $('<a>');
+    // $trackLink.attr('href', data.results.trackmatches.track[0].url);
+    // $trackLink.text('Go to track!');
+    // // $trackLink.text(data.results.trackmatches.track[0].url);
+    // $('body').append($trackLink);
+
+    const $trackLink = $('<a>');
+    $trackLink.attr(
+      'href',
+      data.results.trackmatches.track[
+        Math.floor(Math.random() * data.results.trackmatches.track.length)
+      ].url
+    );
+    $trackLink.text('Go to track!');
+    // $trackLink.text(data.results.trackmatches.track[0].url);
     $('body').append($trackLink);
+
+    // const $trackEmbed =
   };
 });
 
@@ -106,3 +165,16 @@ $(() => {
 // https://media4.s-nbcnews.com/i/newscms/2018_16/1333661/lightening-stock-today-180420-tease_4aeb5d5a1bdfb4d9b15ba54730fbb086.jpg
 
 // http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json
+
+// try adding:
+// const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+//     $.ajax({ url: endpoint2 }).then(handleData2);
+
+// const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+//     $.ajax({ url: endpoint2 }).then(handleData2);
+
+//using disco as place holder right now but can eventually use some sort of variable/array to loop through for tag name, or search song by something else
+
+//maybe randomize the index that it's calling to get a different song every time
+
+// http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json

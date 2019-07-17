@@ -39,3 +39,24 @@ img {
   width: 300px;
   display: block;
 }
+
+h3 {
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  text-align: center;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  /* text-decoration: none; */
+  color: black;
+}
+
+h4 {
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  font-style: oblique;
+}
