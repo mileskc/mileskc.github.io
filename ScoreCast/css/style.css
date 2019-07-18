@@ -60,3 +60,22 @@ h4 {
   text-align: center;
   font-style: oblique;
 }
+
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+.sectionContainer {
+  display: flex;
+}
+
+#left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#right {
+  display: flex;
+  justify-content: flex-end;
+}

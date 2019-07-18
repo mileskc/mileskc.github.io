@@ -20,15 +20,15 @@ $(() => {
     console.log(data);
     const $townName = $('<h2>');
     $townName.text(data.name);
-    $('body').append($townName);
+    $('#left').append($townName);
 
     const $main = $('<h2>');
     $main.text(data.weather[0].main);
-    $('body').append($main);
+    $('#left').append($main);
 
     const $temp = $('<h2>');
     $temp.text(`${data.main.temp}°F`);
-    $('body').append($temp);
+    $('#left').append($temp);
 
     if (data.weather[0].main === 'Clear') {
       let $clear = $(
@@ -70,6 +70,8 @@ $(() => {
     $('h3').remove();
     $('h4').remove();
     $('a').remove();
+
+    // const endpoint3 = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${}&key=AIzaSyCB_CT_KePzmlr-VWqMCuzlb09nDK2x904`
   };
 
   //   $('form').on('click', `#enterMusic`, event => {
@@ -98,32 +100,61 @@ $(() => {
 
     const $songToday = $('<h4>');
     $songToday.text("Today's Tune:");
-    $('body').append($songToday);
+    $('#right').append($songToday);
 
     // const $songName = $('<h3>');
     // $songName.text(data.results.trackmatches.track[0].name);
     // $('body').append($songName);
 
-    const $songName = $('<h3>');
-    $songName.text(
+    const $songObject =
       data.results.trackmatches.track[
         Math.floor(Math.random() * data.results.trackmatches.track.length)
-      ].name
-    );
-    $('body').append($songName);
+      ];
+
+    const $songName = $('<h3>');
+    $songName.text($songObject.name);
+    $('#right').append($songName);
+
+    const $artist = $('<h3>');
+    $artist.text('by ' + $songObject.artist);
+    $('#right').append($artist);
+
+    // const $trackLink = $('<a>');
+    // $trackLink.attr('href', $songObject.url);
+    // $trackLink.text('Go to track!');
+    // // $trackLink.text(data.results.trackmatches.track[0].url);
+    // $('body').append($trackLink);
+
+    const endpoint3 = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${
+      $songObject.name
+    }${$songObject.artist}&key=AIzaSyCB_CT_KePzmlr-VWqMCuzlb09nDK2x904`;
+
+    $.ajax({ url: endpoint3 }).then(handleData3);
+    console.log(endpoint3);
+    console.log($songName);
+
+    $('iframe').remove();
+
+    // const $songName = $('<h3>');
+    // $songName.text(
+    //   data.results.trackmatches.track[
+    //     Math.floor(Math.random() * data.results.trackmatches.track.length)
+    //   ].name
+    // );
+    // $('body').append($songName);
 
     // const $artist = $('<h3>');
     // $artist.text('by ' + data.results.trackmatches.track[0].artist);
     // $('body').append($artist);
 
-    const $artist = $('<h3>');
-    $artist.text(
-      'by ' +
-        data.results.trackmatches.track[
-          Math.floor(Math.random() * data.results.trackmatches.track.length)
-        ].artist
-    );
-    $('body').append($artist);
+    // const $artist = $('<h3>');
+    // $artist.text(
+    //   'by ' +
+    //     data.results.trackmatches.track[
+    //       Math.floor(Math.random() * data.results.trackmatches.track.length)
+    //     ].artist
+    // );
+    // $('body').append($artist);
 
     // const $trackLink = $('<a>');
     // $trackLink.attr('href', data.results.trackmatches.track[0].url);
@@ -131,19 +162,47 @@ $(() => {
     // // $trackLink.text(data.results.trackmatches.track[0].url);
     // $('body').append($trackLink);
 
-    const $trackLink = $('<a>');
-    $trackLink.attr(
-      'href',
-      data.results.trackmatches.track[
-        Math.floor(Math.random() * data.results.trackmatches.track.length)
-      ].url
-    );
-    $trackLink.text('Go to track!');
-    // $trackLink.text(data.results.trackmatches.track[0].url);
-    $('body').append($trackLink);
+    // const $trackLink = $('<a>');
+    // $trackLink.attr(
+    //   'href',
+    //   data.results.trackmatches.track[
+    //     Math.floor(Math.random() * data.results.trackmatches.track.length)
+    //   ].url
+    // );
+    // $trackLink.text('Go to track!');
+    // // $trackLink.text(data.results.trackmatches.track[0].url);
+    // $('body').append($trackLink);
 
     // const $trackEmbed =
   };
+
+  const handleData3 = data => {
+    console.log(data);
+    console.log(data.items[0].id.videoId);
+    const $embedVideo = $('<iframe>', {
+      width: 560,
+      height: 315,
+      src: `https://www.youtube.com/embed/${data.items[0].id.videoId}`,
+      frameborder: 0,
+      allow:
+        'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+    });
+    $('#right').append($embedVideo);
+  };
+
+  //   $('form').on('click', `#enterVid`, event => {
+  //     event.preventDefault();
+  //     let $inputBox2 = $('#input-box3');
+  //     let $tag = $inputBox3.val();
+  //     // const endpoint = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+  //     const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${$tag}&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
+  //     $.ajax({ url: endpoint2 }).then(handleData2);
+  //     $inputBox2.val('');
+  //     $('h3').remove(); ///make it so it doesn't remove weather h2
+  //     console.log(endpoint);
+  //     console.log('clicked');
+  //     // console.log($tag);
+  //   });
 });
 
 //   let $inputBox = $('#input-box');
@@ -178,3 +237,19 @@ $(() => {
 //maybe randomize the index that it's calling to get a different song every time
 
 // http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json
+
+//plan A: Attempt to embed lastfm link
+//plan B: use different Music API where I Can embed the audio
+//plan C: link to third API using search term returned from lastfm where I can embed the audio
+
+// yt_search(term = NULL, max_results = 50, channel_id = NULL,
+//     channel_type = NULL, type = "video", event_type = NULL,
+//     location = NULL, location_radius = NULL, published_after = NULL,
+//     published_before = NULL, video_definition = "any",
+//     video_caption = "any", video_license = "any", video_syndicated = "any",
+//     video_type = "any", simplify = TRUE, get_all = TRUE,
+//     page_token = NULL, ...)
+
+//Youtube API key: AIzaSyCB_CT_KePzmlr-VWqMCuzlb09nDK2x904
+
+//https://www.googleapis.com/youtube/v3/search?part=snippet&q=surfing&key=[YOUR_API_KEY]
