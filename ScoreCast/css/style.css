@@ -7,7 +7,7 @@ body {
   background-size: cover;
 }
 h1 {
-  font-family: Arial, sans-serif;
+  font-family: 'Monoton', cursive;
   font-size: 50px;
   text-align: center;
 }
@@ -16,6 +16,8 @@ h2 {
   font-family: Arial, sans-serif;
   font-size: 40px;
   text-align: center;
+  margin: 5px auto;
+  padding: 15px;
 }
 
 form {
@@ -35,15 +37,23 @@ input {
 }
 
 img {
-  margin: 0 auto;
-  width: 300px;
+  margin: 20px auto;
+  width: 100%;
   display: block;
+  border: double rgb(165, 155, 155) 2px;
+  border-radius: 1%;
 }
 
 h3 {
   font-family: Arial, sans-serif;
   font-size: 35px;
   text-align: center;
+  line-height: 40px;
+  margin: 5px auto;
+}
+
+#songToday {
+  font-style: oblique;
 }
 
 a {
@@ -54,28 +64,49 @@ a {
   color: black;
 }
 
-h4 {
+/* h4 {
   font-family: Arial, sans-serif;
   font-size: 35px;
   text-align: center;
   font-style: oblique;
-}
+  margin: 0px auto 5px auto;
+} */
 
 iframe {
   display: block;
   margin: 0 auto;
+  border-radius: 1%;
+  border: double rgb(165, 155, 155) 2px;
 }
 
 .sectionContainer {
   display: flex;
+  justify-content: center;
+  /* align-content: center; */
 }
 
 #left {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 10px;
+  width: 40%;
+  flex-direction: column;
 }
 
 #right {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 10px;
+  width: 40%;
+  flex-direction: column;
+  align-content: center;
+}
+
+section {
+  border-radius: 2%;
+  margin-top: 30px;
 }

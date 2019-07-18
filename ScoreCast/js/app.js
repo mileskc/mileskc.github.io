@@ -98,8 +98,8 @@ $(() => {
     // $trackLink.text(data.tracks.track[0].url);
     // $('body').append($trackLink);
 
-    const $songToday = $('<h4>');
-    $songToday.text("Today's Tune:");
+    const $songToday = $('<h3>');
+    $songToday.text("Today's Tune:").attr('id', 'songToday');
     $('#right').append($songToday);
 
     // const $songName = $('<h3>');
