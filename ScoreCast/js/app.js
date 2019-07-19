@@ -226,7 +226,7 @@ $(() => {
   const closeModal = () => {
     $modal.css('display', 'none');
   };
-  setTimeout(openModal, 2000);
+  setTimeout(openModal, 1000);
   $closeBtn.on('click', closeModal);
 });
 
