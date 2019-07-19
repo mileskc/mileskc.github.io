@@ -5,7 +5,7 @@ $(() => {
     event.preventDefault();
     let $inputBox = $('#input-box');
     let $zipCode = $inputBox.val();
-    const endpoint = `http://api.openweathermap.org/data/2.5/weather?zip=${$zipCode},us&units=imperial&appid=54358d797d854fe643545e22f50f01c5`;
+    const endpoint = `https://api.openweathermap.org/data/2.5/weather?zip=${$zipCode},us&units=imperial&appid=54358d797d854fe643545e22f50f01c5`;
     $.ajax({ url: endpoint }).then(handleData);
 
     $inputBox.val('');
@@ -74,7 +74,7 @@ $(() => {
       $($main.before($clear));
     }
 
-    const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
+    const endpoint2 = `https://ws.audioscrobbler.com/2.0/?method=track.search&track=${
       data.weather[0].main
     }&api_key=241e400dcad5f275ae171eefc9ad9b3d&format=json`;
     $.ajax({ url: endpoint2 }).then(handleData2);
