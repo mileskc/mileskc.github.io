@@ -194,7 +194,7 @@ li {
 
 h5 {
   text-align: center;
-  font-size: 35px;
+  font-size: 40px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -248,3 +248,11 @@ span {
     flex-direction: column;
   } */
 /* } */
+
+@media (max-width: 600px) {
+  h5 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+}
