@@ -18,21 +18,22 @@ $(() => {
 
   const handleData = data => {
     console.log(data);
-    const $townName = $('<h2>');
+    const $townName = $('<h2>').attr('id', 'town');
     $townName.text(data.name);
     $('#left').append($townName);
 
     const $main = $('<h2>');
-    $main.text(data.weather[0].main);
+    $main.text(`Looks like it's ${data.weather[0].main} today`);
     $('#left').append($main);
 
     const $temp = $('<h2>');
-    $temp.text(`${data.main.temp}°F`);
+    $temp.text(`Temperature is ${data.main.temp}°F`);
     $('#left').append($temp);
 
     if (data.weather[0].main === 'Clear') {
       let $clear = $(
-        '<img src="https://media1.thehungryjpeg.com/thumbs/800_3549446_ksv2wy8k5t06sv4je2vyjmsbqhaoz2eod9hk5ejg.jpg" alt="Sunny clear sky">'
+        '<img src="https://cdn.pixabay.com/photo/2014/03/27/23/57/blue-sky-299765_1280.jpg" alt="Sunny clear sky">'
+        //https://media1.thehungryjpeg.com/thumbs/800_3549446_ksv2wy8k5t06sv4je2vyjmsbqhaoz2eod9hk5ejg.jpg" alt="Sunny clear sky
       );
       $($main.before($clear));
     } else if (data.weather[0].main === 'Rain') {
@@ -52,14 +53,25 @@ $(() => {
       $($main.before($clouds));
     } else if (data.weather[0].main === 'Thunderstorm') {
       let $storm = $(
-        '<https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80" alt="Thunderstorm">'
+        '<img src = "https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80" alt="Thunderstorm">'
       );
       $($main.before($storm));
     } else if (data.weather[0].main === 'Mist') {
       let $mist = $(
-        '<img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80" alt="Misty Day">'
+        '<img src="https://images.unsplash.com/photo-1495294926616-f282c4219dfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Misty Day">'
       );
       $($main.before($mist));
+    } else if (data.weather[0].main === 'Hail') {
+      let $mist = $(
+        '<img src="https://images.unsplash.com/photo-1554320581-2ca71eab767b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Hail">'
+      );
+      $($main.before($mist));
+    } else if (data.weather[0].main === 'Drizzle') {
+      let $clear = $(
+        '<img src="https://images.unsplash.com/photo-1417008914239-59b898b49382?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1664&q=80" alt="Drizzle rain">'
+        //https://media1.thehungryjpeg.com/thumbs/800_3549446_ksv2wy8k5t06sv4je2vyjmsbqhaoz2eod9hk5ejg.jpg" alt="Sunny clear sky
+      );
+      $($main.before($clear));
     }
 
     const endpoint2 = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
@@ -180,7 +192,7 @@ $(() => {
     console.log(data);
     console.log(data.items[0].id.videoId);
     const $embedVideo = $('<iframe>', {
-      width: 560,
+      //   width: 80,
       height: 315,
       src: `https://www.youtube.com/embed/${data.items[0].id.videoId}`,
       frameborder: 0,
@@ -203,6 +215,19 @@ $(() => {
   //     console.log('clicked');
   //     // console.log($tag);
   //   });
+
+  const $modal = $('#modal');
+  const $closeBtn = $('#close');
+
+  const openModal = () => {
+    $modal.css('display', 'block');
+  };
+
+  const closeModal = () => {
+    $modal.css('display', 'none');
+  };
+  setTimeout(openModal, 2000);
+  $closeBtn.on('click', closeModal);
 });
 
 //   let $inputBox = $('#input-box');
@@ -253,3 +278,8 @@ $(() => {
 //Youtube API key: AIzaSyCB_CT_KePzmlr-VWqMCuzlb09nDK2x904
 
 //https://www.googleapis.com/youtube/v3/search?part=snippet&q=surfing&key=[YOUR_API_KEY]
+
+//https://cdn.pixabay.com/photo/2014/03/27/23/57/blue-sky-299765_1280.jpg
+
+///ADD snow condition
+//sleet?

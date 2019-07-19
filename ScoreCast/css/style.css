@@ -2,7 +2,7 @@ body {
   /* background-image: url('https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-weather-spectre-800x450.jpg?itok=F2qkTCJN'); */
   /* background-color: skyblue; */
   background-image: url('http://videa.tv.s3.amazonaws.com/wp-content/uploads/2019/02/weatherforecastbackgroun_635273.jpg');
-  background-color: rgba(248, 247, 255, 0.8);
+  background-color: rgba(248, 247, 255, 0.4);
   background-blend-mode: overlay;
   background-size: cover;
 }
@@ -10,14 +10,20 @@ h1 {
   font-family: 'Monoton', cursive;
   font-size: 50px;
   text-align: center;
+  margin-top: 50px;
 }
 
 h2 {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   text-align: center;
   margin: 5px auto;
   padding: 15px;
+  color: rgb(73, 72, 72);
+}
+
+#town {
+  font-size: 60px;
 }
 
 form {
@@ -25,35 +31,44 @@ form {
 }
 
 button {
-  padding: 5px;
+  padding: 10px;
   font-size: 20px;
   background-color: rgb(116, 169, 230);
   color: white;
+  cursor: pointer;
 }
 
 input {
-  padding: 5px;
+  padding: 10px;
   font-size: 20px;
+  width: 700px;
+  text-align: center;
+  /* margin-bottom: 50px; */
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 img {
-  margin: 20px auto;
-  width: 100%;
+  width: 80%;
   display: block;
   border: double rgb(165, 155, 155) 2px;
   border-radius: 1%;
+  margin: 0 auto;
 }
 
 h3 {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 35px;
   text-align: center;
   line-height: 40px;
   margin: 5px auto;
+  color: rgb(73, 72, 72);
 }
 
 #songToday {
   font-style: oblique;
+  font-size: 50px;
+  margin-bottom: 50px;
 }
 
 a {
@@ -74,9 +89,10 @@ a {
 
 iframe {
   display: block;
-  margin: 0 auto;
+  margin: 50px auto;
   border-radius: 1%;
   border: double rgb(165, 155, 155) 2px;
+  width: 80%;
 }
 
 .sectionContainer {
@@ -89,24 +105,105 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
   margin: 10px;
   width: 40%;
   flex-direction: column;
+  box-shadow: 5px 5px 50px #888888;
 }
 
 #right {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
   margin: 10px;
   width: 40%;
   flex-direction: column;
   align-content: center;
+  box-shadow: 5px 5px 10px #888888;
 }
 
 section {
   border-radius: 2%;
   margin-top: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  width: 100%;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 0px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  font-size: 30px;
+}
+
+li {
+  display: flex;
+}
+
+#modal {
+  display: none;
+  height: 100%;
+  width: 100%;
+  color: black;
+  z-index: 1;
+  overflow: auto;
+}
+
+#modal-textbox {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  height: 450px;
+  width: 650px;
+  border-radius: 2px;
+  margin: 10px auto 150px auto;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  line-height: 230%;
+  font-family: 'Poppins', sans-serif;
+}
+
+h5 {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-size: 25px;
+  padding: 0px 15px 3px 15px;
+}
+
+#modal-footer {
+  text-align: right;
+}
+
+#close {
+  padding: 10px;
+  background-color: rgb(115, 132, 160);
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
 }
