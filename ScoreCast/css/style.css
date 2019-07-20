@@ -182,3 +182,27 @@ p {
     text-align: center;
   }
 }
+
+/* Footer styling */
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.credits {
+  font-size: 15px;
+}
+
+a {
+  color: rgb(51, 48, 48);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(115, 132, 160);
+}
