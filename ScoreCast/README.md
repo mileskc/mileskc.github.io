@@ -12,6 +12,10 @@ Once that was functioning, I added a second search bar so and linked the last.fm
 
 I was able to solve the majority of the problems I encountered. Initially I had thought it would be fun to create a playlist for the day based on the weather but this would be a little more complicated, and ultimately decided that there would be more daily variety to have one randomized song each day.
 
-# Link to site
+# Site Photos
+
+
+
+# Link to Site
 
 Visit ScoreCast at https://mileskc.github.io/ScoreCast/html/
