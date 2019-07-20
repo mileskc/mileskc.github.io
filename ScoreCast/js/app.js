@@ -1,5 +1,3 @@
-console.log('working?');
-
 $(() => {
   //Click event when you press enter button
   $('form').on('click', `#enterWeather`, event => {
@@ -112,7 +110,7 @@ $(() => {
 
     $.ajax({ url: endpoint3 }).then(handleData3);
 
-    //reset video when new zip code is entered
+    //Reset video when new zip code is entered
     $('iframe').remove();
   };
 
