@@ -18,48 +18,55 @@
     <script defer src="../js/app.js"></script>
   </head>
   <body>
-    <header>
-      <h1>ScoreCast ♫</h1>
-    </header>
-    <main>
-      <!--Input Box for Zip Code-->
-      <form>
-        <input
-          type="text"
-          id="input-box"
-          class="zipCode"
-          placeholder="Enter Zip Code"
-        />
-        <button type="submit" class="button" id="enterWeather">Enter</button>
-      </form>
-      <!--Modal Pop-up-->
-      <div id="modal">
-        <div id="modal-textbox">
-          <h5>About <span>ScoreCast ♫</span></h5>
-          <p>
-            Welcome to <span>ScoreCast ♫</span>! Whether the weather is what you
-            expected or not, we have your song of the day. Based on the current
-            atmospheric conditions, it's designed to set the mood and keep the
-            present meteorology in mind. Close this box and type in your (US)
-            Zipcode to get your <span>ScoreCast ♫</span> for today!
-          </p>
-          <div id="modal-footer">
-            <button id="close" href="#">Close</button>
+    <div id="page-container">
+      <div id="content-wrap">
+        <header>
+          <h1>ScoreCast ♫</h1>
+        </header>
+        <main>
+          <!--Input Box for Zip Code-->
+          <form>
+            <input
+              type="text"
+              id="input-box"
+              class="zipCode"
+              placeholder="Enter Zip Code"
+            />
+            <button type="submit" class="button" id="enterWeather">
+              Enter
+            </button>
+          </form>
+          <!--Modal Pop-up-->
+          <div id="modal">
+            <div id="modal-textbox">
+              <h5>About <span>ScoreCast ♫</span></h5>
+              <p>
+                Welcome to <span>ScoreCast ♫</span>! Whether the weather is what
+                you expected or not, we have your song of the day. Based on the
+                current atmospheric conditions, it's designed to set the mood
+                and keep the present meteorology in mind. Close this box and
+                type in your (US) Zipcode to get your
+                <span>ScoreCast ♫</span> for today!
+              </p>
+              <div id="modal-footer">
+                <button id="close" href="#">Close</button>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="sectionContainer">
+            <section id="left"></section>
+            <section id="right"></section>
+          </div>
+        </main>
       </div>
-      <div class="sectionContainer">
-        <section id="left"></section>
-        <section id="right"></section>
-      </div>
-    </main>
-    <footer>
-      <p class="credits">© 2019 Katelyn Miles</p>
-      <p class="credits">
-        Powered by <a href="https://openweathermap.org/">OpenWeather</a>,
-        <a href="https://www.last.fm/api/">last.fm</a>, and
-        <a href="https://developers.google.com/youtube/v3/">YouTube</a>
-      </p>
-    </footer>
+      <footer>
+        <p class="credits">© 2019 Katelyn Miles</p>
+        <p class="credits">
+          Powered by <a href="https://openweathermap.org/">OpenWeather</a>,
+          <a href="https://www.last.fm/api/">last.fm</a>, and
+          <a href="https://developers.google.com/youtube/v3/">YouTube</a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

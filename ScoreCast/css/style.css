@@ -192,14 +192,17 @@ footer {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
   width: 100%;
   flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: right;
   align-items: flex-end;
+  position: absolute;
+  bottom: 0;
 }
 
 .credits {
   font-size: 15px;
-  align-items: flex-end;
-  align-content: flex-end;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 a {
@@ -209,4 +212,9 @@ a {
 
 a:hover {
   color: rgb(115, 132, 160);
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
 }
