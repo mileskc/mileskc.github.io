@@ -216,6 +216,7 @@ footer {
   font-size: 15px;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 0px;
 }
 
 a {

@@ -21,7 +21,7 @@ $(() => {
     $('#left').append($townName);
 
     const $main = $('<h2>');
-    $main.text(`Looks like it's ${data.weather[0].main} today`);
+    $main.text(`Current climate: ${data.weather[0].main}`);
     $('#left').append($main);
 
     const $temp = $('<h2>');
