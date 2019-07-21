@@ -80,7 +80,6 @@ $(() => {
     //reset screen when typing in a new zip code
     $('h3').remove();
     $('h4').remove();
-    $('a').remove();
   };
 
   //Handle Data function for last.fm API
