@@ -184,11 +184,6 @@ p {
     text-align: center;
   }
 
-  /* #right {
-    margin-bottom: 150px;
-    background-color: none;
-  } */
-
   footer {
     margin-top: 200px;
   }
@@ -208,7 +203,6 @@ footer {
   align-items: flex-end;
   position: absolute;
   bottom: 0;
-  /* height: 2.5rem; */
   margin-top: 10px;
 }
 
@@ -232,6 +226,3 @@ a:hover {
   position: relative;
   min-height: 100vh;
 }
-
-/* #content-wrap {
-  padding-bottom: 2.5rem; /* Footer height */
