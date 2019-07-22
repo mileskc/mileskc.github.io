@@ -16,7 +16,7 @@ I was able to solve the majority of the problems I encountered. Initially I had 
 
 ![Site Screenshot 1](https://github.com/mileskc/mileskc.github.io/blob/master/ScoreCast/ScoreCast%20Page%20Screenshot%20(Modal).png)
 
-![Site Screenshot 2](https://github.com/mileskc/mileskc.github.io/blob/master/ScoreCast/ScoreCast%20Page%20Screenshot%20(Results).png)
+![Site Screenshot 2](https://github.com/mileskc/mileskc.github.io/blob/master/ScoreCast/ScoreCast%20Page%20Screenshot%20-(Results).png)
 
 # Link to Site
 
