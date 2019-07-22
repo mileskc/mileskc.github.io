@@ -60,15 +60,25 @@ $(() => {
       );
       $($main.before($mist));
     } else if (data.weather[0].main === 'Hail') {
-      let $mist = $(
+      let $hail = $(
         '<img src="https://images.unsplash.com/photo-1554320581-2ca71eab767b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Hail">'
       );
-      $($main.before($mist));
+      $($main.before($hail));
     } else if (data.weather[0].main === 'Drizzle') {
-      let $clear = $(
+      let $drizzle = $(
         '<img src="https://images.unsplash.com/photo-1417008914239-59b898b49382?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1664&q=80" alt="Drizzle rain">'
       );
-      $($main.before($clear));
+      $($main.before($drizzle));
+    } else if (data.weather[0].main === 'Smoke') {
+      let $smoke = $(
+        '<img src="https://images.unsplash.com/photo-1503217195339-397eb18024e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Smoky Day">'
+      );
+      $($main.before($smoke));
+    } else {
+      let $defaultPhoto = $(
+        '<img src="https://i.imgur.com/aO6wwTx.jpg" alt="Smoky Day">'
+      );
+      $($main.before($defaultPhoto));
     }
 
     //Endpoint for last.fm API
