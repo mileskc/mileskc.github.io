@@ -20,4 +20,4 @@ I was able to solve the majority of the problems I encountered. Initially I had 
 
 # Link to Site
 
-Visit ScoreCast at https://mileskc.github.io/ScoreCast/html/
+Visit ScoreCast at https://mileskc.github.io/ScoreCast/
