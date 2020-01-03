@@ -76,7 +76,7 @@ $(() => {
       $($main.before($smoke));
     } else {
       let $defaultPhoto = $(
-        '<img src="https://i.imgur.com/aO6wwTx.jpg" alt="Smoky Day">'
+        '<img src="https://i.imgur.com/aO6wwTx.jpg" alt="Welcome!">'
       );
       $($main.before($defaultPhoto));
     }
